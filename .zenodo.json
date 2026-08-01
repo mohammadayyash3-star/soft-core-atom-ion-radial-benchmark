@@ -1,5 +1,5 @@
 {
-  "title": "Continuum-certified atom-ion spectral benchmark",
+  "title": "Continuum-Certified Spectral Benchmark for a Calibrated Trap-Assisted Atom–Ion Model",
   "description": "Reproducibility source code, tests, and execution metadata for a continuum-certified fixed-Hamiltonian benchmark of numerical and approximate quantum methods in a calibrated trap-assisted atom-ion model.",
   "creators": [
     {
