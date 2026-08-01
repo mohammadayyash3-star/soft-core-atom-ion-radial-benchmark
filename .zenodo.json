@@ -1,0 +1,22 @@
+{
+  "title": "Continuum-certified atom-ion spectral benchmark",
+  "description": "Reproducibility source code, tests, and execution metadata for a continuum-certified fixed-Hamiltonian benchmark of numerical and approximate quantum methods in a calibrated trap-assisted atom-ion model.",
+  "creators": [
+    {
+      "name": "Abu Ayyash, Mohammad"
+    }
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "version": "1.0.0",
+  "keywords": [
+    "atom-ion",
+    "finite-difference method",
+    "Numerov",
+    "WKB",
+    "variational method",
+    "perturbation theory",
+    "harmonic-oscillator basis",
+    "reproducible research"
+  ]
+}

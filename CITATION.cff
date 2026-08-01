@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated paper and the archived software release."
+title: "Continuum-certified atom-ion spectral benchmark"
+type: software
+authors:
+  - family-names: "Abu Ayyash"
+    given-names: "Mohammad"
+version: "1.0.0"
+date-released: 2026-08-01
+license: MIT
+abstract: >-
+  Reproducibility source code for a continuum-certified, fixed-Hamiltonian
+  benchmark of numerical and approximate quantum methods in a calibrated
+  trap-assisted atom-ion model.
+keywords:
+  - atom-ion
+  - finite-difference method
+  - Numerov
+  - WKB
+  - variational method
+  - perturbation theory
+  - harmonic-oscillator basis
+  - reproducible research

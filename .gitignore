@@ -1,0 +1,50 @@
+# Python caches and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.numba_cache/
+
+# Virtual environments and local environment files
+.venv/
+venv/
+env/
+.env
+
+# IDE and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated analysis outputs under scripts
+scripts/**/*.csv
+scripts/**/*.json
+scripts/**/*.tex
+scripts/**/*.pdf
+scripts/**/*.png
+scripts/**/*.jpg
+scripts/**/*.jpeg
+scripts/**/*.svg
+scripts/**/*.npy
+scripts/**/*.npz
+
+# Generated output directories
+reference_outputs/
+figures/
+journal_figures/
+outputs/
+
+# Obsolete or local-only source files
+scripts/graphical_abstract_figure9_final.py
+scripts/graphical_abstract_outputs/
+scripts/Figure 2 Soft-core regularization of the atom-ion polarization potential
+scripts/partarbution method code with soft core  second edition.py
+
+# Archives and temporary files
+*.zip
+*.tar.gz
+*.tmp
+*.bak
