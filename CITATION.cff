@@ -1,6 +1,8 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite the associated paper and the archived software release."
-title: "Continuum-Certified Spectral Benchmark for a Calibrated Trap-Assisted Atom-Ion Model"
+message: "If you use this software, please cite the archived software release and the associated manuscript."
+
+title: "Reproducibility Software for Numerical Certification and Approximation Benchmarking of an Experimentally Anchored Soft-Core Atom-Ion Radial Hamiltonian"
+
 type: software
 
 authors:
@@ -8,24 +10,40 @@ authors:
     given-names: "Mohammad"
     affiliation: "Al-Quds University"
 
-version: "1.0.1"
-date-released: 2026-08-01
+version: "1.0.2"
+date-released: 2026-08-02
+
 license: MIT
 
 abstract: >-
-  Reproducibility source code for a continuum-certified,
-  fixed-Hamiltonian benchmark of numerical and approximate quantum
-  methods in a calibrated trap-assisted atom-ion model.
+  Reproducibility source code, tests, and execution metadata supporting
+  numerical certification and fixed-operator approximation benchmarking
+  of an experimentally anchored effective soft-core atom-ion radial
+  Hamiltonian. The software includes fourth-order finite-difference
+  calculations, continuum extrapolation, independent Numerov validation,
+  WKB quantization, variational calculations, perturbative-breakdown
+  diagnostics, non-perturbative harmonic-oscillator-basis diagonalization,
+  regulator-dependence analysis, angular-sector diagnostics, and
+  zero-energy boundary calculations. The numerical precision reported by
+  the software characterizes the selected frozen operator and must not be
+  interpreted as comparable physical accuracy for the complete Paul-trap
+  system or its dynamical formation process.
 
 keywords:
   - atom-ion
+  - effective Hamiltonian
+  - soft-core potential
+  - radial Hamiltonian
+  - numerical benchmark
   - finite-difference method
-  - Numerov
-  - WKB
+  - continuum extrapolation
+  - Numerov method
+  - WKB quantization
   - variational method
   - perturbation theory
   - harmonic-oscillator basis
+  - regulator dependence
   - reproducible research
 
-repository-code: "https://github.com/mohammadayyash3-star/continuum-certified-atom-ion-benchmark"
-url: "https://github.com/mohammadayyash3-star/continuum-certified-atom-ion-benchmark"
+repository-code: "https://github.com/mohammadayyash3-star/soft-core-atom-ion-radial-benchmark"
+url: "https://github.com/mohammadayyash3-star/soft-core-atom-ion-radial-benchmark"
