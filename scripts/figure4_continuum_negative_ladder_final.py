@@ -1,5 +1,20 @@
 
-
+# ============================================================
+# Figure 4 in the EPJ D manuscript
+# Continuum-certified negative-energy ladder
+#
+# Scientific design:
+#   * uses only the final continuum-certified negative levels
+#   * distinguishes the calibration-anchored ground state from
+#     the independently predicted excited negative levels
+#   * indicates the E > 0 trap-confined sector without inserting
+#     obsolete or uncertified positive-state energies
+#   * displays the experimental 15(2) MHz anchor as a band
+#   * reports node ordering and level-resolved validation scales
+#
+# LaTeX artwork name:
+#   figures/Figure5.png
+# ============================================================
 
 from __future__ import annotations
 
@@ -18,9 +33,9 @@ import matplotlib.patheffects as pe
 # 1. Output configuration
 # ============================================================
 
-OUTPUT_DIR = Path("figures")
-OUTPUT_BASENAME = "Figure5"
-SHOW_FIGURE = True
+OUTPUT_DIR = Path(__file__).resolve().parent / "figures"
+OUTPUT_BASENAME = "Figure4"
+SHOW_FIGURE = False
 
 
 # ============================================================
@@ -32,9 +47,9 @@ STATE_INDEX = np.array([0, 1, 2], dtype=int)
 
 E_CONTINUUM_MHZ = np.array(
     [
-        -14.999999965,
-        -9.211774846,
-        -3.530419675,
+        -14.999999963984,
+        -9.211774845325,
+        -3.530419674323,
     ],
     dtype=float,
 )
@@ -44,26 +59,29 @@ NODE_COUNT = np.array([0, 1, 2], dtype=int)
 # Observed grid-convergence order for each certified level.
 OBSERVED_ORDER = np.array(
     [
-        3.9996,
-        3.9991,
-        3.9986,
+        4.000021137769,
+        3.999985371318,
+        3.999981169132,
     ],
     dtype=float,
 )
 
 # Largest level-resolved validation difference among the continuum fit,
 # independent matrix backend, Numerov result, and HO-basis result.
+# Final level-resolved validation scale.  For every state, the
+# dominant contribution is the absolute Numerov-minus-continuum-FDM
+# difference from the final central benchmark run.
 VALIDATION_SCALE_HZ = np.array(
     [
-        0.0654,
-        0.3470,
-        0.6485,
+        0.025770949918,
+        0.030730957417,
+        0.022044883754,
     ],
     dtype=float,
 )
 
 # Final calibrated model parameters.
-RC_NM = 25.876730807
+RC_NM = 25.8767
 OMEGA_OVER_2PI_MHZ = 1.2
 ELL = 0
 
@@ -185,6 +203,42 @@ def stroked_text(text_artist, linewidth: float = 2.4) -> None:
     )
 
 
+EXPECTED_CONTINUUM_MHZ = np.array(
+    [-14.999999963984, -9.211774845325, -3.530419674323],
+    dtype=float,
+)
+EXPECTED_VALIDATION_HZ = np.array(
+    [0.025770949918, 0.030730957417, 0.022044883754],
+    dtype=float,
+)
+
+
+def validate_final_release_values() -> None:
+    """Prevent accidental regeneration from stale manuscript numbers."""
+    if not np.allclose(
+        E_CONTINUUM_MHZ,
+        EXPECTED_CONTINUUM_MHZ,
+        rtol=0.0,
+        atol=5.0e-13,
+    ):
+        raise RuntimeError(
+            "Continuum energies do not match the final benchmark release."
+        )
+
+    if not np.allclose(
+        VALIDATION_SCALE_HZ,
+        EXPECTED_VALIDATION_HZ,
+        rtol=0.0,
+        atol=5.0e-13,
+    ):
+        raise RuntimeError(
+            "Validation scales do not match the final benchmark release."
+        )
+
+    if not np.all(np.abs(OBSERVED_ORDER - 4.0) < 5.0e-4):
+        raise RuntimeError("The fitted continuum orders are not fourth order.")
+
+
 # ============================================================
 # 5. Figure construction
 # ============================================================
@@ -192,14 +246,15 @@ def stroked_text(text_artist, linewidth: float = 2.4) -> None:
 def make_figure() -> plt.Figure:
     set_journal_style()
     validate_input_data()
+    validate_final_release_values()
 
-    fig, ax = plt.subplots(figsize=(7.20, 4.20))
+    fig, ax = plt.subplots(figsize=(7.35, 4.35))
 
     fig.subplots_adjust(
         left=0.095,
         right=0.985,
         top=0.930,
-        bottom=0.225,
+        bottom=0.235,
     )
 
     y_min = -18.2
@@ -296,7 +351,7 @@ def make_figure() -> plt.Figure:
         energy_text = ax.text(
             state_index,
             energy_mhz + 0.54,
-            rf"$E_{{{state_index}}}/h={energy_mhz:.6f}\,\mathrm{{MHz}}$",
+            rf"$E_{{{state_index}}}/h={energy_mhz:.9f}\,\mathrm{{MHz}}$",
             color=color,
             fontsize=8.1,
             ha="center",
@@ -311,7 +366,7 @@ def make_figure() -> plt.Figure:
             state_index,
             energy_mhz - 0.58,
             rf"${node_count}$ {node_word}; "
-            rf"$\delta_{{\rm val}}\leq {validation_hz:.4g}\,\mathrm{{Hz}}$",
+            rf"$\delta_{{\rm val}}={validation_hz:.4f}\,\mathrm{{Hz}}$",
             color=COL["muted"],
             fontsize=7.15,
             ha="center",
@@ -324,7 +379,7 @@ def make_figure() -> plt.Figure:
     negative_label = ax.text(
         0.025,
         0.50,
-        "continuum-certified\nnegative-energy sector",
+        "negative-energy sector of reference operator",
         transform=ax.transAxes,
         color=COL["prediction"],
         fontsize=8.0,
@@ -337,10 +392,10 @@ def make_figure() -> plt.Figure:
     positive_label = ax.text(
         0.975,
         0.985,
-        "positive trap-confined sector\n(no free-particle continuum)",
+        "positive trap-confined sector",
         transform=ax.transAxes,
         color=COL["muted"],
-        fontsize=7.65,
+        fontsize=7.55,
         ha="right",
         va="top",
         zorder=8,
@@ -364,7 +419,7 @@ def make_figure() -> plt.Figure:
     band_text = ax.text(
         2.34,
         ANCHOR_BAND_LOW_MHZ + 0.28,
-        r"experimental anchor: $E_{\rm bind}/h=15(2)\,\mathrm{MHz}$",
+        r"experimental anchor: $15(2)\,\mathrm{MHz}$",
         color=COL["anchor"],
         fontsize=7.45,
         ha="right",
@@ -375,12 +430,14 @@ def make_figure() -> plt.Figure:
 
     # Model and certification information.
     parameter_text = (
-        rf"$r_c={RC_NM:.6f}\,\mathrm{{nm}}$, "
+        rf"$r_c={RC_NM:.4f}\,\mathrm{{nm}}$, "
         rf"$\omega/2\pi={OMEGA_OVER_2PI_MHZ:.1f}\,\mathrm{{MHz}}$, "
         rf"$\ell={ELL}$"
         "\n"
-        rf"$p_n\simeq4$; "
-        rf"$\max(\delta_{{\rm val}})={np.max(VALIDATION_SCALE_HZ):.4g}\,\mathrm{{Hz}}$"
+        rf"$p=(4.000021,\,3.999985,\,3.999981)$"
+        "\n"
+        rf"$\max(\delta_{{\rm val}})="
+        rf"{np.max(VALIDATION_SCALE_HZ):.4f}\,\mathrm{{Hz}}$"
     )
 
     ax.text(
@@ -388,7 +445,7 @@ def make_figure() -> plt.Figure:
         0.965,
         parameter_text,
         transform=ax.transAxes,
-        fontsize=7.45,
+        fontsize=7.15,
         ha="left",
         va="top",
         color=COL["ink"],
@@ -399,19 +456,6 @@ def make_figure() -> plt.Figure:
             "linewidth": 0.65,
             "alpha": 0.97,
         },
-        zorder=9,
-    )
-
-    # Distinguish the fitted anchor from predicted excited levels.
-    ax.text(
-        0.50,
-        0.965,
-        "Certified negative-energy ladder",
-        transform=ax.transAxes,
-        fontsize=9.3,
-        ha="center",
-        va="top",
-        color=COL["ink"],
         zorder=9,
     )
 
@@ -447,7 +491,7 @@ def make_figure() -> plt.Figure:
             marker="s",
             markerfacecolor=COL["white"],
             markeredgecolor=COL["prediction"],
-            label=r"Predicted excited negative levels",
+            label=r"Conditional excited negative levels",
         ),
         Patch(
             facecolor=COL["anchor_fill"],
@@ -512,10 +556,32 @@ def save_figure(fig: plt.Figure) -> None:
         facecolor=COL["white"],
     )
 
+    data_path = OUTPUT_DIR / f"{OUTPUT_BASENAME}_data.csv"
+    np.savetxt(
+        data_path,
+        np.column_stack(
+            (
+                STATE_INDEX,
+                E_CONTINUUM_MHZ,
+                NODE_COUNT,
+                OBSERVED_ORDER,
+                VALIDATION_SCALE_HZ,
+            )
+        ),
+        delimiter=",",
+        header=(
+            "state_index,E_continuum_MHz,node_count,"
+            "observed_order,validation_scale_Hz"
+        ),
+        comments="",
+        fmt=["%d", "%.12f", "%d", "%.12f", "%.12f"],
+    )
+
     print("Saved:")
     print(pdf_path)
     print(svg_path)
     print(png_path)
+    print(data_path)
 
 
 def main() -> None:

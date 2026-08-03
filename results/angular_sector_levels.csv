@@ -1,0 +1,19 @@
+ell,state_index,E_MHz,classification
+0,0,-14.999999970076713,negative
+0,1,-9.211774917564071,negative
+0,2,-3.5304199125284867,negative
+0,3,1.2809735272176115,positive trap-confined
+0,4,5.1479285088053075,positive trap-confined
+0,5,8.415288771545418,positive trap-confined
+1,0,-12.342808214140861,negative
+1,1,-6.348526091097483,negative
+1,2,-0.9916774696948778,negative
+1,3,3.342207309125115,positive trap-confined
+1,4,6.864754198891205,positive trap-confined
+1,5,9.951213031375117,positive trap-confined
+2,0,-9.50848405942179,negative
+2,1,-3.5847967759536914,negative
+2,2,1.3455391643774421,positive trap-confined
+2,3,5.244632557408294,positive trap-confined
+2,4,8.507089250379979,positive trap-confined
+2,5,11.458580780473312,positive trap-confined

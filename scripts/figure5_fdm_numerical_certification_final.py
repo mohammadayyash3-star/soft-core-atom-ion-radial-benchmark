@@ -154,19 +154,19 @@ FALLBACK_MANIFEST = {
             "n": 0,
             "E_FDM_continuum_MHz": -14.999999963984289,
             "E_Numerov_MHz": -14.999999990955239,
-            "delta_Numerov_minus_FDM_Hz": -0.026970949917881626,
+            "delta_Numerov_minus_FDM_Hz": -0.025770949917881626,
         },
         {
             "n": 1,
             "E_FDM_continuum_MHz": -9.211774845325102,
             "E_Numerov_MHz": -9.211774877056060,
-            "delta_Numerov_minus_FDM_Hz": -0.031730957417153150,
+            "delta_Numerov_minus_FDM_Hz": -0.030730957417153150,
         },
         {
             "n": 2,
             "E_FDM_continuum_MHz": -3.5304196743229888,
             "E_Numerov_MHz": -3.5304196970678725,
-            "delta_Numerov_minus_FDM_Hz": -0.022744883754199918,
+            "delta_Numerov_minus_FDM_Hz": -0.022044883754199918,
         },
     ],
 }

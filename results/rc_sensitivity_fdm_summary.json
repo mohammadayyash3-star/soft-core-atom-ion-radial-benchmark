@@ -1,0 +1,202 @@
+{
+  "purpose": "fixed-grid local rc sensitivity; no recalibration",
+  "numerical_scheme": "fourth-order five-point FDM with explicit Dirichlet boundaries and odd-reflection ghost closure",
+  "grid_N": 5155,
+  "delta_r_nm": 0.12611563833915407,
+  "r_min_nm": 0.0,
+  "r_max_nm": 650.0,
+  "omega_over_2pi_MHz": 1.2,
+  "ell": 0,
+  "reference_rc_nm": 25.876730807,
+  "target_MHz": 15.0,
+  "experimental_band_MHz": [
+    13.0,
+    17.0
+  ],
+  "n_plot_points": 46,
+  "table_rows": [
+    {
+      "rc_nm": 24.0,
+      "E0_MHz": -20.85210157791425,
+      "E1_MHz": -13.853162707261616,
+      "E2_MHz": -6.898922245597531,
+      "E0_abs_MHz": 20.85210157791425,
+      "n_negative": 4,
+      "delta15_MHz": 5.852101577914251,
+      "delta15_abs_MHz": 5.852101577914251,
+      "delta15_pct": 39.01401051942834,
+      "inside_13_17_MHz_band": false,
+      "is_reference_point": false
+    },
+    {
+      "rc_nm": 24.5,
+      "E0_MHz": -19.067335753040428,
+      "E1_MHz": -12.42974119617338,
+      "E2_MHz": -5.860177239180303,
+      "E0_abs_MHz": 19.067335753040428,
+      "n_negative": 4,
+      "delta15_MHz": 4.067335753040428,
+      "delta15_abs_MHz": 4.067335753040428,
+      "delta15_pct": 27.115571686936185,
+      "inside_13_17_MHz_band": false,
+      "is_reference_point": false
+    },
+    {
+      "rc_nm": 25.0,
+      "E0_MHz": -17.45810782957506,
+      "E1_MHz": -11.152167540877597,
+      "E2_MHz": -4.932333736010151,
+      "E0_abs_MHz": 17.45810782957506,
+      "n_negative": 3,
+      "delta15_MHz": 2.4581078295750594,
+      "delta15_abs_MHz": 2.4581078295750594,
+      "delta15_pct": 16.387385530500396,
+      "inside_13_17_MHz_band": false,
+      "is_reference_point": false
+    },
+    {
+      "rc_nm": 25.166667,
+      "E0_MHz": -16.95709326948872,
+      "E1_MHz": -10.755573123237808,
+      "E2_MHz": -4.6451193894163225,
+      "E0_abs_MHz": 16.95709326948872,
+      "n_negative": 3,
+      "delta15_MHz": 1.9570932694887198,
+      "delta15_abs_MHz": 1.9570932694887198,
+      "delta15_pct": 13.047288463258132,
+      "inside_13_17_MHz_band": true,
+      "is_reference_point": false
+    },
+    {
+      "rc_nm": 25.5,
+      "E0_MHz": -16.003990895595958,
+      "E1_MHz": -10.002664634591381,
+      "E2_MHz": -4.100852687089174,
+      "E0_abs_MHz": 16.003990895595958,
+      "n_negative": 3,
+      "delta15_MHz": 1.0039908955959582,
+      "delta15_abs_MHz": 1.0039908955959582,
+      "delta15_pct": 6.693272637306388,
+      "inside_13_17_MHz_band": true,
+      "is_reference_point": false
+    },
+    {
+      "rc_nm": 25.876730807,
+      "E0_MHz": -14.999999970076713,
+      "E1_MHz": -9.21177491756407,
+      "E2_MHz": -3.5304199125284863,
+      "E0_abs_MHz": 14.999999970076713,
+      "n_negative": 3,
+      "delta15_MHz": -2.992328695938795e-08,
+      "delta15_abs_MHz": 2.992328695938795e-08,
+      "delta15_pct": 1.9948857972925302e-07,
+      "inside_13_17_MHz_band": true,
+      "is_reference_point": true
+    },
+    {
+      "rc_nm": 26.166667,
+      "E0_MHz": -14.276162476774514,
+      "E1_MHz": -8.642993510459744,
+      "E2_MHz": -3.1209074939406487,
+      "E0_abs_MHz": 14.276162476774514,
+      "n_negative": 3,
+      "delta15_MHz": -0.7238375232254857,
+      "delta15_abs_MHz": 0.7238375232254857,
+      "delta15_pct": 4.825583488169904,
+      "inside_13_17_MHz_band": true,
+      "is_reference_point": false
+    },
+    {
+      "rc_nm": 26.5,
+      "E0_MHz": -13.492515355342219,
+      "E1_MHz": -8.02855107317828,
+      "E2_MHz": -2.679096917320749,
+      "E0_abs_MHz": 13.492515355342219,
+      "n_negative": 3,
+      "delta15_MHz": -1.5074846446577812,
+      "delta15_abs_MHz": 1.5074846446577812,
+      "delta15_pct": 10.049897631051874,
+      "inside_13_17_MHz_band": true,
+      "is_reference_point": false
+    },
+    {
+      "rc_nm": 26.666667,
+      "E0_MHz": -13.118996519257966,
+      "E1_MHz": -7.736167583062524,
+      "E2_MHz": -2.469037133613711,
+      "E0_abs_MHz": 13.118996519257966,
+      "n_negative": 3,
+      "delta15_MHz": -1.8810034807420344,
+      "delta15_abs_MHz": 1.8810034807420344,
+      "delta15_pct": 12.540023204946896,
+      "inside_13_17_MHz_band": true,
+      "is_reference_point": false
+    },
+    {
+      "rc_nm": 26.833333,
+      "E0_MHz": -12.757071508786792,
+      "E1_MHz": -7.453155286450964,
+      "E2_MHz": -2.2657991390669845,
+      "E0_abs_MHz": 12.757071508786792,
+      "n_negative": 3,
+      "delta15_MHz": -2.242928491213208,
+      "delta15_abs_MHz": 2.242928491213208,
+      "delta15_pct": 14.952856608088052,
+      "inside_13_17_MHz_band": false,
+      "is_reference_point": false
+    },
+    {
+      "rc_nm": 27.0,
+      "E0_MHz": -12.406301749419981,
+      "E1_MHz": -7.1791408063882045,
+      "E2_MHz": -2.0690918249156316,
+      "E0_abs_MHz": 12.406301749419981,
+      "n_negative": 3,
+      "delta15_MHz": -2.593698250580019,
+      "delta15_abs_MHz": 2.593698250580019,
+      "delta15_pct": 17.29132167053346,
+      "inside_13_17_MHz_band": false,
+      "is_reference_point": false
+    },
+    {
+      "rc_nm": 28.0,
+      "E0_MHz": -10.51393369715606,
+      "E1_MHz": -5.705332003078184,
+      "E2_MHz": -1.0115554766807693,
+      "E0_abs_MHz": 10.51393369715606,
+      "n_negative": 3,
+      "delta15_MHz": -4.486066302843939,
+      "delta15_abs_MHz": 4.486066302843939,
+      "delta15_pct": 29.907108685626262,
+      "inside_13_17_MHz_band": false,
+      "is_reference_point": false
+    }
+  ],
+  "validation": {
+    "reference_row": {
+      "rc_nm": 25.876730807,
+      "E0_MHz": -14.999999970076713,
+      "E1_MHz": -9.21177491756407,
+      "E2_MHz": -3.5304199125284863,
+      "E0_abs_MHz": 14.999999970076713,
+      "n_negative": 3,
+      "delta15_MHz": -2.992328695938795e-08,
+      "delta15_abs_MHz": 2.992328695938795e-08,
+      "delta15_pct": 1.9948857972925302e-07,
+      "inside_13_17_MHz_band": true,
+      "is_reference_point": true
+    },
+    "expected_fixed_grid_levels_MHz": [
+      -14.999999970076715,
+      -9.21177491756407,
+      -3.530419912528486
+    ],
+    "obtained_minus_expected_Hz": [
+      1.7763568394002505e-09,
+      0.0,
+      -4.440892098500626e-10
+    ],
+    "self_check_tolerance_Hz": 0.02,
+    "self_check_pass": true
+  }
+}
