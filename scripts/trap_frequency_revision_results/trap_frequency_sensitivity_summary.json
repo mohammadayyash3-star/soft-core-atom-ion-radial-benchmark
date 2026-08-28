@@ -1,0 +1,355 @@
+{
+  "purpose": "continuum-certified trap-frequency sensitivity for manuscript revision",
+  "scientific_tests": {
+    "fixed_rc": "vary omega at the reference continuum-calibrated r_c; no recalibration",
+    "recalibrated_rc": "for each omega, recalibrate r_c at the continuum level to E0/h=-15 MHz"
+  },
+  "frequencies_MHz": [
+    1.1,
+    1.2,
+    1.3
+  ],
+  "target_E0_MHz": -15.0,
+  "experimental_binding_band_MHz": [
+    13.0,
+    17.0
+  ],
+  "reference_rc_nm": 25.876730807,
+  "ell": 0,
+  "regulator": "V1",
+  "r_min_nm": 0.0,
+  "r_max_nm": 650.0,
+  "grid_N": [
+    1800,
+    2556,
+    3630,
+    5155
+  ],
+  "boundary_convention": "explicit Dirichlet values with odd-reflection fourth-order closure",
+  "continuum_fit": "E_n(h)=E_n(infinity)+A_n h^p_n with p_n determined from the grid sequence",
+  "results": [
+    {
+      "mode": "fixed_rc",
+      "omega_over_2pi_MHz": 1.1,
+      "rc_nm": 25.876730807,
+      "rc_minus_reference_nm": 0.0,
+      "n_negative": 3,
+      "negative_count_grid_sequence": "3;3;3;3",
+      "negative_count_stable": true,
+      "E0_continuum_MHz": -15.065268151448429,
+      "p0": 3.999146553124571,
+      "R2_0": 0.9999999999976513,
+      "fit_residual0_Hz": 3.8191672047105385e-07,
+      "fit_stderr0_Hz": 2.2085723771715655e-07,
+      "E1_continuum_MHz": -9.349621927010533,
+      "p1": 3.998471786547885,
+      "R2_1": 0.99999999993326,
+      "fit_residual1_Hz": 2.405187160547939e-05,
+      "fit_stderr1_Hz": 1.3954042638467261e-05,
+      "E2_continuum_MHz": -3.7725140102831722,
+      "p2": 3.9977736332572995,
+      "R2_2": 0.9999999998376219,
+      "fit_residual2_Hz": 0.0001219557788090242,
+      "fit_stderr2_Hz": 7.074532814934231e-05,
+      "E0_target_offset_kHz": -65.26815144842857
+    },
+    {
+      "mode": "fixed_rc",
+      "omega_over_2pi_MHz": 1.2,
+      "rc_nm": 25.876730807,
+      "rc_minus_reference_nm": 0.0,
+      "n_negative": 3,
+      "negative_count_grid_sequence": "3;3;3;3",
+      "negative_count_stable": true,
+      "E0_continuum_MHz": -14.999999963963647,
+      "p0": 3.99902679097962,
+      "R2_0": 0.9999999999825124,
+      "fit_residual0_Hz": 1.0675904604795505e-06,
+      "fit_stderr0_Hz": 6.275930942980589e-07,
+      "E1_continuum_MHz": -9.211774844980905,
+      "p1": 3.9984356354874455,
+      "R2_1": 0.9999999999444932,
+      "fit_residual1_Hz": 2.2858159809402423e-05,
+      "fit_stderr1_Hz": 1.3263350727806195e-05,
+      "E2_continuum_MHz": -3.5304196725584434,
+      "p2": 3.997740671577469,
+      "R2_2": 0.9999999998310775,
+      "fit_residual2_Hz": 0.00013174394908332943,
+      "fit_stderr2_Hz": 7.643036079562716e-05,
+      "E0_target_offset_kHz": 3.6036352568658e-05
+    },
+    {
+      "mode": "fixed_rc",
+      "omega_over_2pi_MHz": 1.3,
+      "rc_nm": 25.876730807,
+      "rc_minus_reference_nm": 0.0,
+      "n_negative": 3,
+      "negative_count_grid_sequence": "3;3;3;3",
+      "negative_count_stable": true,
+      "E0_continuum_MHz": -14.930062975579123,
+      "p0": 3.999230814773259,
+      "R2_0": 0.9999999999741306,
+      "fit_residual0_Hz": 1.3731238368563936e-06,
+      "fit_stderr0_Hz": 7.969365953163845e-07,
+      "E1_continuum_MHz": -9.064177323018411,
+      "p1": 3.9984420109016394,
+      "R2_1": 0.9999999999081334,
+      "fit_residual1_Hz": 3.072386789426673e-05,
+      "fit_stderr1_Hz": 1.7821771384913977e-05,
+      "E2_continuum_MHz": -3.273751134980802,
+      "p2": 3.9977056573801533,
+      "R2_2": 0.9999999998184264,
+      "fit_residual2_Hz": 0.00014488898969489128,
+      "fit_stderr2_Hz": 8.405226134402256e-05,
+      "E0_target_offset_kHz": 69.93702442087724
+    },
+    {
+      "mode": "recalibrated_rc",
+      "omega_over_2pi_MHz": 1.1,
+      "rc_nm": 25.902273164148315,
+      "rc_minus_reference_nm": 0.02554235714831421,
+      "n_negative": 3,
+      "negative_count_grid_sequence": "3;3;3;3",
+      "negative_count_stable": true,
+      "E0_continuum_MHz": -14.999999999999144,
+      "p0": 3.9991415480579735,
+      "R2_0": 0.9999999999728929,
+      "fit_residual0_Hz": 1.2896350654045818e-06,
+      "fit_stderr0_Hz": 7.450462583419719e-07,
+      "E1_continuum_MHz": -9.298517287402158,
+      "p1": 3.9984900193399127,
+      "R2_1": 0.999999999907804,
+      "fit_residual1_Hz": 2.8059332635166356e-05,
+      "fit_stderr1_Hz": 1.6278443791119246e-05,
+      "E2_continuum_MHz": -3.7360705444797278,
+      "p2": 3.9977797129794896,
+      "R2_2": 0.999999999834901,
+      "fit_residual2_Hz": 0.00012201928356603275,
+      "fit_stderr2_Hz": 7.078404690741014e-05,
+      "E0_target_offset_kHz": 8.562039965909207e-10
+    },
+    {
+      "mode": "recalibrated_rc",
+      "omega_over_2pi_MHz": 1.2,
+      "rc_nm": 25.876730792965205,
+      "rc_minus_reference_nm": -1.4034796436135366e-08,
+      "n_negative": 3,
+      "negative_count_grid_sequence": "3;3;3;3",
+      "negative_count_stable": true,
+      "E0_continuum_MHz": -15.000000000003261,
+      "p0": 3.999118236551404,
+      "R2_0": 0.9999999999997254,
+      "fit_residual0_Hz": 1.3322676295501878e-07,
+      "fit_stderr0_Hz": 7.863257051045453e-08,
+      "E1_continuum_MHz": -9.211774873327437,
+      "p1": 3.9984396524494534,
+      "R2_1": 0.9999999999379673,
+      "fit_residual1_Hz": 2.4167334800040408e-05,
+      "fit_stderr1_Hz": 1.4021371119745466e-05,
+      "E2_continuum_MHz": -3.5304196929787177,
+      "p2": 3.9977389653073647,
+      "R2_2": 0.9999999998338112,
+      "fit_residual2_Hz": 0.00013068124360415823,
+      "fit_stderr2_Hz": 7.5809416828364e-05,
+      "E0_target_offset_kHz": -3.26139115713886e-09
+    },
+    {
+      "mode": "recalibrated_rc",
+      "omega_over_2pi_MHz": 1.3,
+      "rc_nm": 25.849630007754975,
+      "rc_minus_reference_nm": -0.027100799245026508,
+      "n_negative": 3,
+      "negative_count_grid_sequence": "3;3;3;3",
+      "negative_count_stable": true,
+      "E0_continuum_MHz": -15.000000000001897,
+      "p0": 3.9990773262950925,
+      "R2_0": 0.9999999999851557,
+      "fit_residual0_Hz": 1.049826892085548e-06,
+      "fit_stderr0_Hz": 6.079689672958661e-07,
+      "E1_continuum_MHz": -9.119449753675822,
+      "p1": 3.9984219148792026,
+      "R2_1": 0.9999999999268029,
+      "fit_residual1_Hz": 2.7631230636870896e-05,
+      "fit_stderr1_Hz": 1.6027868108701312e-05,
+      "E2_continuum_MHz": -3.3139716656196763,
+      "p2": 3.997699250341496,
+      "R2_2": 0.999999999822154,
+      "fit_residual2_Hz": 0.00014449907936864292,
+      "fit_stderr2_Hz": 8.382298442282413e-05,
+      "E0_target_offset_kHz": -1.8971491044794675e-09
+    }
+  ],
+  "comparison": [
+    {
+      "omega_over_2pi_MHz": 1.1,
+      "fixed_rc_nm": 25.876730807,
+      "fixed_E0_MHz": -15.065268151448429,
+      "fixed_E1_MHz": -9.349621927010533,
+      "fixed_E2_MHz": -3.7725140102831722,
+      "fixed_N_negative": 3,
+      "fixed_delta_E0_vs_1p2_kHz": -65.26818748478114,
+      "fixed_delta_E1_vs_1p2_kHz": -137.84708202962827,
+      "fixed_delta_E2_vs_1p2_kHz": -242.0943377247289,
+      "recalibrated_rc_nm": 25.902273164148315,
+      "recalibrated_rc_shift_vs_1p2_nm": 0.025542371183110646,
+      "recalibrated_E0_MHz": -14.999999999999144,
+      "recalibrated_E1_MHz": -9.298517287402158,
+      "recalibrated_E2_MHz": -3.7360705444797278,
+      "recalibrated_N_negative": 3,
+      "recalibrated_delta_E1_vs_1p2_kHz": -86.74241407472039,
+      "recalibrated_delta_E2_vs_1p2_kHz": -205.65085150101004
+    },
+    {
+      "omega_over_2pi_MHz": 1.2,
+      "fixed_rc_nm": 25.876730807,
+      "fixed_E0_MHz": -14.999999963963647,
+      "fixed_E1_MHz": -9.211774844980905,
+      "fixed_E2_MHz": -3.5304196725584434,
+      "fixed_N_negative": 3,
+      "fixed_delta_E0_vs_1p2_kHz": 0.0,
+      "fixed_delta_E1_vs_1p2_kHz": 0.0,
+      "fixed_delta_E2_vs_1p2_kHz": 0.0,
+      "recalibrated_rc_nm": 25.876730792965205,
+      "recalibrated_rc_shift_vs_1p2_nm": 0.0,
+      "recalibrated_E0_MHz": -15.000000000003261,
+      "recalibrated_E1_MHz": -9.211774873327437,
+      "recalibrated_E2_MHz": -3.5304196929787177,
+      "recalibrated_N_negative": 3,
+      "recalibrated_delta_E1_vs_1p2_kHz": 0.0,
+      "recalibrated_delta_E2_vs_1p2_kHz": 0.0
+    },
+    {
+      "omega_over_2pi_MHz": 1.3,
+      "fixed_rc_nm": 25.876730807,
+      "fixed_E0_MHz": -14.930062975579123,
+      "fixed_E1_MHz": -9.064177323018411,
+      "fixed_E2_MHz": -3.273751134980802,
+      "fixed_N_negative": 3,
+      "fixed_delta_E0_vs_1p2_kHz": 69.93698838452467,
+      "fixed_delta_E1_vs_1p2_kHz": 147.5975219624939,
+      "fixed_delta_E2_vs_1p2_kHz": 256.6685375776414,
+      "recalibrated_rc_nm": 25.849630007754975,
+      "recalibrated_rc_shift_vs_1p2_nm": -0.02710078521023007,
+      "recalibrated_E0_MHz": -15.000000000001897,
+      "recalibrated_E1_MHz": -9.119449753675822,
+      "recalibrated_E2_MHz": -3.3139716656196763,
+      "recalibrated_N_negative": 3,
+      "recalibrated_delta_E1_vs_1p2_kHz": 92.3251196516155,
+      "recalibrated_delta_E2_vs_1p2_kHz": 216.44802735904145
+    }
+  ],
+  "validation": {
+    "benchmark": {
+      "status": "PASS",
+      "reference_rc_nm": 25.876730807,
+      "reference_omega_MHz": 1.2,
+      "expected_levels_MHz": [
+        -14.999999963984,
+        -9.211774845325,
+        -3.530419674323
+      ],
+      "obtained_levels_MHz": [
+        -14.999999963963647,
+        -9.211774844980905,
+        -3.5304196725584434
+      ],
+      "obtained_minus_expected_Hz": [
+        2.035172030900867e-05,
+        0.0003440945306465437,
+        0.0017645565009161146
+      ],
+      "tolerance_Hz": 0.5
+    },
+    "recalibration": {
+      "status": "PASS",
+      "target_MHz": -15.0,
+      "target_offsets_Hz": [
+        8.562039965909207e-07,
+        -3.26139115713886e-06,
+        -1.8971491044794675e-06
+      ],
+      "target_tolerance_Hz": 1.0,
+      "central_recalibrated_rc_nm": 25.876730792965205,
+      "reference_rc_nm": 25.876730807,
+      "central_rc_difference_nm": -1.4034796436135366e-08,
+      "rc_tolerance_nm": 0.0001,
+      "root_diagnostics": [
+        {
+          "omega_over_2pi_MHz": 1.1,
+          "initial_bracket_nm": [
+            20.0,
+            35.0
+          ],
+          "final_bracket_nm": [
+            20.0,
+            35.0
+          ],
+          "bracket_expansions": 0,
+          "root_iterations": 9,
+          "root_function_calls": 10,
+          "converged": true,
+          "rc_nm": 25.902273164148315,
+          "continuum_E0_MHz": -14.999999999999156,
+          "target_offset_Hz": 8.43769498715119e-07,
+          "objective_evaluations": 10
+        },
+        {
+          "omega_over_2pi_MHz": 1.2,
+          "initial_bracket_nm": [
+            20.0,
+            35.0
+          ],
+          "final_bracket_nm": [
+            20.0,
+            35.0
+          ],
+          "bracket_expansions": 0,
+          "root_iterations": 9,
+          "root_function_calls": 10,
+          "converged": true,
+          "rc_nm": 25.876730792965205,
+          "continuum_E0_MHz": -15.000000000003245,
+          "target_offset_Hz": -3.2454039455842576e-06,
+          "objective_evaluations": 10
+        },
+        {
+          "omega_over_2pi_MHz": 1.3,
+          "initial_bracket_nm": [
+            20.0,
+            35.0
+          ],
+          "final_bracket_nm": [
+            20.0,
+            35.0
+          ],
+          "bracket_expansions": 0,
+          "root_iterations": 9,
+          "root_function_calls": 10,
+          "converged": true,
+          "rc_nm": 25.849630007754975,
+          "continuum_E0_MHz": -15.000000000001913,
+          "target_offset_Hz": -1.9131363160340698e-06,
+          "objective_evaluations": 10
+        }
+      ]
+    }
+  },
+  "source_manifest": {
+    "trap_frequency_sensitivity_revision.py": {
+      "path": "scripts/trap_frequency_sensitivity_revision.py",
+      "sha256": "c40a151de110d6733013a1116e41732d39484ea57b2d2b6f6822e28b481bd182"
+    },
+    "fdm_fourth_order_core.py": {
+      "path": "scripts/fdm_fourth_order_core.py",
+      "sha256": "d47be32221d65404ed20afdf5e7f316b28fb42c7997ddf329cfdf922442c6e61"
+    },
+    "benchmark_reference.py": {
+      "path": "scripts/benchmark_reference.py",
+      "sha256": "144efcd2b3c1163b9d0266c7d4cd130c8a775f661a53721cee5d0af384133765"
+    },
+    "unified_model_params.py": {
+      "path": "scripts/unified_model_params.py",
+      "sha256": "d24daf99df5f5cf2a997fdc6645c250af9b0f536754ec0f536ec7a14e9968eaa"
+    }
+  }
+}
