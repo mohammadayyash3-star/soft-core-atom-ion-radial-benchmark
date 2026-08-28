@@ -1,10 +1,10 @@
-# Continuum-certified atom-ion spectral benchmark
+# Numerical certification and approximation benchmarking of a soft-core atom-ion radial Hamiltonian
 
 Reproducibility repository for the paper:
 
-**Continuum-certified spectral benchmark for a calibrated trap-assisted atom-ion model: approximation hierarchy and short-range dependence**
+**Numerical Certification and Approximation Benchmarking of an Experimentally Anchored Soft-Core Atom-Ion Radial Hamiltonian**
 
-The repository contains the final Python implementation used for the continuum-certified finite-difference benchmark, independent Numerov validation, WKB quantization, variational estimate, perturbative-breakdown analysis, harmonic-oscillator basis diagonalization, regulator diagnostics, angular-sector checks, zero-energy boundaries, and publication figures.
+The repository contains the final Python implementation used for the continuum-certified finite-difference benchmark, independent Numerov validation, WKB quantization, variational estimate, perturbative-breakdown analysis, harmonic-oscillator-basis diagonalization, regulator diagnostics, angular-sector checks, zero-energy boundaries, continuum-certified trap-frequency sensitivity, and publication figures and supporting numerical outputs.
 
 ## Final model convention
 
@@ -98,6 +98,38 @@ python scripts/rc_omega_parameter_map_fdm.py
 | `angular_sector_diagnostic_final.py` | Fixed-input $\ell=0,1,2$ diagnostic |
 | `zero_energy_crossing_continuum_final.py` | Continuum-extrapolated spectral boundaries |
 | `rc_sensitivity_fdm_final.py` | Local soft-core-radius sensitivity |
+| `trap_frequency_sensitivity_revision.py` | Continuum-certified 1.10-1.30 MHz trap-frequency sensitivity using fixed-\(r_c\) and continuum-recalibrated-\(r_c\) protocols |
+
+### Trap-frequency sensitivity revision
+
+The manuscript trap-frequency sensitivity analysis is reproduced with:
+
+```bash
+python scripts/trap_frequency_sensitivity_revision.py
+```
+
+The calculation evaluates effective radial frequencies
+
+```text
+omega/(2*pi) = 1.10, 1.20, 1.30 MHz
+```
+
+using two complementary protocols:
+
+1. fixed `r_c = 25.876730807 nm`, with only the effective confinement frequency varied;
+2. continuum-level recalibration of `r_c(omega)` so that `E0/h = -15 MHz` at each frequency.
+
+The calculation preserves three negative-energy states throughout both protocols.
+
+The generated outputs are written to:
+
+```text
+scripts/trap_frequency_revision_results/
+```
+
+and include machine-readable CSV/JSON results, manuscript-ready LaTeX output, and PDF/PNG figures.
+
+## Figure scripts
 
 ## Figure scripts
 

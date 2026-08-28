@@ -7,34 +7,40 @@ type: software
 
 authors:
   - family-names: "Abu Ayyash"
-    given-names: "Mohammad"
+    given-names: "Mohammad Y."
     affiliation: "Al-Quds University"
 
-version: "1.0.2"
-date-released: 2026-08-02
+  - family-names: "Barghouthi"
+    given-names: "Imad A."
+    affiliation: "Al-Quds University"
+
+version: "1.0.5"
+date-released: 2026-08-28
 
 license: MIT
 
 abstract: >-
-  Reproducibility source code, tests, and execution metadata supporting
-  numerical certification and fixed-operator approximation benchmarking
-  of an experimentally anchored effective soft-core atom-ion radial
-  Hamiltonian. The software includes fourth-order finite-difference
-  calculations, continuum extrapolation, independent Numerov validation,
-  WKB quantization, variational calculations, perturbative-breakdown
-  diagnostics, non-perturbative harmonic-oscillator-basis diagonalization,
-  regulator-dependence analysis, angular-sector diagnostics, and
-  zero-energy boundary calculations. The numerical precision reported by
-  the software characterizes the selected frozen operator and must not be
-  interpreted as comparable physical accuracy for the complete Paul-trap
-  system or its dynamical formation process.
+  Reproducibility source code, tests, execution metadata, and selected
+  generated outputs supporting numerical certification and fixed-operator
+  approximation benchmarking of an experimentally anchored effective
+  soft-core atom-ion radial Hamiltonian. The software includes fourth-order
+  finite-difference calculations, continuum extrapolation, independent
+  Numerov validation, WKB quantization, variational calculations,
+  perturbative-breakdown diagnostics, non-perturbative
+  harmonic-oscillator-basis diagonalization, regulator-dependence analysis,
+  angular-sector diagnostics, zero-energy boundary calculations, and
+  continuum-certified trap-frequency sensitivity over 1.10-1.30 MHz using
+  fixed-r_c and continuum-recalibrated-r_c protocols. The numerical precision
+  reported by the software characterizes the selected frozen operator and
+  must not be interpreted as comparable physical accuracy for the complete
+  Paul-trap system or its dynamical formation process.
 
 keywords:
   - atom-ion
   - effective Hamiltonian
   - soft-core potential
   - radial Hamiltonian
-  - numerical benchmark
+  - numerical certification
   - finite-difference method
   - continuum extrapolation
   - Numerov method
@@ -43,6 +49,7 @@ keywords:
   - perturbation theory
   - harmonic-oscillator basis
   - regulator dependence
+  - trap-frequency sensitivity
   - reproducible research
 
 repository-code: "https://github.com/mohammadayyash3-star/soft-core-atom-ion-radial-benchmark"
