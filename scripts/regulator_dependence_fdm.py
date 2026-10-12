@@ -48,7 +48,7 @@ VALIDATION_RMAX_NM_SWEEP = (650.0, 800.0, 1000.0)
 
 @dataclass(frozen=True)
 class FDMConfig:
-    r_min: float = 1.0e-10       # m = 0.1 nm
+    r_min: float = 0.0             # certified Dirichlet boundary r=0
     r_max: float = 650.0e-9      # m
     N: int = 12000
     sigma: float = -1.0e-26
@@ -176,33 +176,38 @@ def effective_potential(r: np.ndarray, p: ModelParams, reg: RegulatorSpec) -> np
 
 
 def build_fdm_operator(p: ModelParams, reg: RegulatorSpec) -> Tuple[sp.csr_matrix, np.ndarray, Tuple[int, int], float]:
-    """
-    Build the radial Hamiltonian matrix using a fourth-order, five-point stencil
-    for the second derivative. Boundary rows near the edges are omitted, matching
-    the established benchmark convention.
-    """
-    if p.N < 7:
-        raise ValueError("N must be at least 7 for a five-point finite-difference stencil.")
+    """Fourth-order FDM operator with Dirichlet/odd-reflection closure.
 
-    r = np.linspace(p.r_min, p.r_max, p.N, dtype=float)
+    The unknown vector is u_1,...,u_{N-2} on a grid starting at r=0.
+    Odd ghost relations u_{-1}=-u_1 and u_N=-u_{N-2} retain the
+    fourth-order five-point stencil at the first and last unknown points.
+    """
+    if p.N < 5:
+        raise ValueError("N must be at least 5 for a five-point stencil.")
+    if abs(p.r_min) > 1.0e-30:
+        raise ValueError("The certified regulator workflow requires r_min=0.")
+
+    r = np.linspace(0.0, p.r_max, p.N, dtype=float)
     dr = float(r[1] - r[0])
     mu = reduced_mass(p)
 
-    i0, i1 = 2, p.N - 3
-    idx = np.arange(i0, i1 + 1)
-    r_int = r[idx]
+    i0, i1 = 1, p.N - 2
+    r_int = r[i0 : i1 + 1]
     m = r_int.size
 
     inv_h2 = 1.0 / (dr * dr)
     c0 = -30.0 / 12.0 * inv_h2
     c1 = +16.0 / 12.0 * inv_h2
     c2 = -1.0 / 12.0 * inv_h2
+    diagonal = np.full(m, c0, dtype=float)
+    diagonal[0] = c0 - c2
+    diagonal[-1] = c0 - c2
 
     lap = sp.diags(
         diagonals=[
             c2 * np.ones(m - 2),
             c1 * np.ones(m - 1),
-            c0 * np.ones(m),
+            diagonal,
             c1 * np.ones(m - 1),
             c2 * np.ones(m - 2),
         ],
@@ -213,7 +218,6 @@ def build_fdm_operator(p: ModelParams, reg: RegulatorSpec) -> Tuple[sp.csr_matri
     tmat = -(HBAR**2) / (2.0 * mu) * lap
     hmat = tmat + sp.diags(effective_potential(r_int, p, reg), format="csr")
     return hmat.tocsr(), r, (i0, i1), dr
-
 
 # ============================================================
 # State diagnostics
@@ -244,11 +248,18 @@ def radial_observables(u: np.ndarray, r: np.ndarray, rc: float) -> Dict[str, flo
     r2_mean = float(np.trapezoid((r**2) * dens, r))
     rms = math.sqrt(max(0.0, r2_mean))
 
-    mask_core = r < rc
-    if np.any(mask_core):
-        p_inside = float(np.trapezoid(dens[mask_core], r[mask_core]))
-    else:
+    # Integrate to the physical cutoff, including the fractional last grid cell.
+    # Truncating at the last node below rc underestimates P(r < rc).
+    if rc <= float(r[0]):
         p_inside = 0.0
+    elif rc >= float(r[-1]):
+        p_inside = float(np.trapezoid(dens, r))
+    else:
+        j = int(np.searchsorted(r, rc, side="left"))
+        dens_at_rc = float(np.interp(rc, r[j - 1:j + 1], dens[j - 1:j + 1]))
+        r_slice = np.append(r[:j], rc)
+        d_slice = np.append(dens[:j], dens_at_rc)
+        p_inside = float(np.trapezoid(d_slice, r_slice))
 
     peak_index = int(np.argmax(dens))
     r_peak = float(r[peak_index])
