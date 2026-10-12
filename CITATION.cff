@@ -10,12 +10,8 @@ authors:
     given-names: "Mohammad Y."
     affiliation: "Al-Quds University"
 
-  - family-names: "Barghouthi"
-    given-names: "Imad A."
-    affiliation: "Al-Quds University"
-
-version: "1.0.5"
-date-released: 2026-08-28
+version: "1.0.6"
+date-released: 2026-10-12
 
 license: MIT
 
@@ -54,3 +50,4 @@ keywords:
 
 repository-code: "https://github.com/mohammadayyash3-star/soft-core-atom-ion-radial-benchmark"
 url: "https://github.com/mohammadayyash3-star/soft-core-atom-ion-radial-benchmark"
+# Add the version-specific Zenodo DOI after v1.0.6 is archived.
