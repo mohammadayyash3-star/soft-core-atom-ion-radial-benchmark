@@ -3,17 +3,13 @@
   "description": "Reproducibility source code, tests, execution metadata, and selected generated outputs supporting numerical certification and fixed-operator approximation benchmarking of an experimentally anchored effective soft-core atom-ion radial Hamiltonian. The archive includes fourth-order finite-difference calculations, continuum extrapolation, independent Numerov validation, WKB quantization, variational calculations, perturbative-breakdown diagnostics, non-perturbative harmonic-oscillator-basis diagonalization, regulator-dependence analysis, angular-sector diagnostics, zero-energy boundary calculations, and continuum-certified trap-frequency sensitivity over 1.10-1.30 MHz using both fixed-r_c and continuum-recalibrated-r_c protocols. The reported numerical precision characterizes the selected frozen operator and must not be interpreted as comparable physical accuracy for the complete Paul-trap system or its dynamical formation process.",
   "creators": [
     {
-      "name": "Abu Ayyash, Mohammad",
-      "affiliation": "Al-Quds University"
-    },
-    {
-      "name": "Barghouthi, Imad A.",
+      "name": "Abu Ayyash, Mohammad Y.",
       "affiliation": "Al-Quds University"
     }
   ],
   "license": "MIT",
   "upload_type": "software",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "keywords": [
     "atom-ion",
     "effective Hamiltonian",

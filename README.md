@@ -131,8 +131,6 @@ and include machine-readable CSV/JSON results, manuscript-ready LaTeX output, an
 
 ## Figure scripts
 
-## Figure scripts
-
 - `figure3_effective_radial_potential_final.py`
 - `figure4_continuum_negative_ladder_final.py`
 - `figure5_fdm_numerical_certification_final.py`
@@ -162,8 +160,14 @@ Generated caches, local environments, temporary plots, and obsolete output varia
 
 ## Citation
 
-Use the metadata in `CITATION.cff`. After archiving a GitHub release on Zenodo, add the Zenodo DOI to `CITATION.cff`, `.zenodo.json`, the manuscript data-availability statement, and this README.
+The forthcoming `v1.0.6` release corrects regulator-workflow boundary handling and radial cutoff integration; it preserves `v1.0.5` as a historical release. Cite the exact archived Zenodo version used for your results. The DOI for `v1.0.6` must be added here and to manuscript reference [52] after Zenodo creates the new version-specific record; changing GitHub's `main` branch does not revise an existing Zenodo archive.
+
+The software citation metadata is maintained in `CITATION.cff` and `.zenodo.json`.
 
 ## License
 
 The code is released under the MIT License. See `LICENSE`.
+
+## v1.0.6 correction notes
+
+The regulator workflow now uses the same r=0 Dirichlet/odd-reflection boundary convention as the certified reference FDM operator. The radial diagnostic P(r<r_c) is integrated to the physical cutoff r_c via interpolation of the terminal density; older code stopped at the last mesh point below r_c. The frozen reference spectrum and calibration parameters are not changed by these source-code edits. Regulator comparison CSV values must be regenerated and verified before tagging v1.0.6; existing CSV outputs should not be treated as regenerated until validation succeeds.
